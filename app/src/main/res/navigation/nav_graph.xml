@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment">
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.navigationpractive.UI.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_userInputFragment"
+            app:destination="@id/userInputFragment"
+
+            />
+        <action
+            android:id="@+id/action_profileFragment_to_moneyFragment"
+            app:destination="@id/moneyFragment"
+
+            />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/userInputFragment"
+        android:name="com.example.navigationpractive.UI.UserInputFragment"
+        android:label="fragment_user_input"
+        tools:layout="@layout/fragment_user_input" >
+        <action
+            android:id="@+id/action_userInputFragment_to_conformationFragment"
+            app:destination="@id/conformationFragment" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/successFragment2"
+        android:name="com.example.navigationpractive.UI.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment2_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_successFragment2_to_userInputFragment"
+            app:destination="@id/userInputFragment"
+  
+            />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/conformationFragment"
+        android:name="com.example.navigationpractive.UI.ConformationFragment"
+        android:label="fragment_conformation"
+        tools:layout="@layout/fragment_conformation" >
+        <action
+            android:id="@+id/action_conformationFragment_to_successFragment2"
+            app:destination="@id/successFragment2" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Jhon" />
+        <argument
+            android:name="amount"
+            app:argType="string"
+            android:defaultValue="0" />
+        <argument
+            android:name="number"
+            app:argType="string" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/moneyFragment"
+        android:name="com.example.navigationpractive.UI.MoneyFragment"
+        android:label="fragment_money"
+        tools:layout="@layout/fragment_money" />
+
+
+
+
+</navigation>
